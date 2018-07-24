@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class Foo extends Component {
+
+
+
+class GridTile extends Component {
   render() {
     return (
-      <div>CONTENT</div>
+      <div className="item">
+      </div>
     )
   }
 }
 
-Foo.propTypes = {
+GridTile.propTypes = {
   prop: PropTypes.array,
 }
 
-export default Foo;
+export default GridTile;

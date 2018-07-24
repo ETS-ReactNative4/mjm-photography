@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import Foo from './components/Foo.js';//****Change to container if using */
+import GridTile from './components/GridTile.js';//****Change to container if using */
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-  class App extends Component {
-         render() {
+
+
+const arr = ["item", "item", "item", "item", "item"]
+
+class App extends Component {
+  render() {
     return (
-            <div className="App">
-     MAKE SOMETHING FUCKING AWESOME
+      <div className="App main-grid container">
+        {arr.map((item, i) => <div className={`item item-${i+1}`}>{item} {i+1}</div> )}
       </div>
     );
   }
