@@ -1,74 +1,95 @@
 .App {
-  text-align: center;
+  overflow-x: hidden;
+  font-family: "Oswald", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  /* font-weight: 400; */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+:root {
+  --green-color: #BFBA3D;
+  --header-color: #e8e6de;
+  --headeropacity-color: #e8e6decc;
+  --blue-color: #8AB2C2;
+  --headertext-color: black;
+  --orange-color: #DC5620;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+:root {
+  --primary-color: #a19d5f;
+  --secondary-color: #fd9943;
+  --accent-color: #3f2806;
+  --alt-color: #fed556;
+  --alttwo-color: #f26d20;
+}
+
+.basic-flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.basic-flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+
 
 
 /*************** grid *************/
 
-.design-container {
-  background-color: #BFBA3Dee
+.aside {
+background-color: pink;
+ 
 }
 
 .container {
+  grid-column-start: 2;
   padding: 40px;
-  width: 100%;
   margin: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* grid-template-rows: repeat(auto-fill, minmax(auto, 1fr)); */
   grid-gap: 10px;
   grid-auto-flow: dense;
 }
 
 .item {
-  border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 4em;
-  background: #8AB2C2;
+  /* font-size: 4em; */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
- 
 }
 
-.item:nth-child(odd) {
-  grid-column: span 2;
+.grid-image {
+  max-width: 100%;
+ min-width: 300px;
+
 }
 
-.item:nth-child(even) {
-  grid-row: span 2;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

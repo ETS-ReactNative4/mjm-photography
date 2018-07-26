@@ -8,6 +8,7 @@ class GridTile extends Component {
   render() {
     return (
       <div className="item">
+      
       </div>
     )
   }
