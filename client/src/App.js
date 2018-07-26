@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import GridTile from './components/GridTile.js';//****Change to container if using */
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+// import { BrowserRouter, Route, Switch } from "react-router-dom";
+import state from "./state.js"
 
-
-
-const arr = ["item", "item", "item", "item", "item"]
 
 class App extends Component {
 
-  handleClick = (e) => {
-    console.log(e.target.id);
+  constructor (props){
+    super(props)
+
+    this.state = {
+      images: state.images
+    }
   }
   
   render() {
@@ -20,7 +22,7 @@ class App extends Component {
       Mike Mitchell
         </aside>
         <div className="main-grid container">
-          {arr.map((item, i) => <div className={`item item-${i+1}`} key={i} id={i+1} onClick={this.handleClick}> <img src="http://via.placeholder.com/500x350" alt="" className="grid-image"/> </div> )}
+          {this.state.images.map((item, i) => <GridTile data={this.state.images} index={i} key={item.id}/>)}
         </div>
       </div>
     );
