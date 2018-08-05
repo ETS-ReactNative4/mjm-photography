@@ -1,8 +1,9 @@
 .App {
   overflow-x: hidden;
   font-family: "Oswald", sans-serif;
+  font-weight: 200;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 6fr;
   /* font-weight: 400; */
 }
 
@@ -35,7 +36,7 @@
           align-items: center;
 }
 
-.basic-flex-col {
+.start-flex-col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,21 +44,32 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: flex-end;
+      -ms-flex-pack: flex-end;
+          justify-content: flex-end;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
 }
 
 
 
 
 /*************** grid *************/
+.name-heading {
+    font-weight: 200;
+    font-size: 4em;
+    text-align: center;
+    /* width: 100vw; */
+    grid-column-start: 2;
+    grid-row: 1 2;
+}
 
 .aside {
-background-color: pink;
+ height: 100vh;
+ position: fixed;
+ background-color: pink;
+ padding: 25px;
  
 }
 
@@ -67,8 +79,8 @@ background-color: pink;
   margin: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  /* grid-template-rows: repeat(auto-fill, minmax(auto, 1fr)); */
-  grid-gap: 10px;
+  grid-template-rows: 1fr auto-fill;
+  grid-gap: 20px;
   grid-auto-flow: dense;
 }
 
@@ -85,11 +97,46 @@ background-color: pink;
           justify-content: center;
 }
 
+.loading-div {
+    position: absolute;
+    animation: spin .6s linear infinite;
+}
+
+.grid-tile-spinner {
+
+    font-size: 3em;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
 .grid-image {
-  max-width: 100%;
- min-width: 300px;
+max-width: 100%;
+z-index: 2
+ /* min-width: 70%; */
 
 }
+
+.image-info {
+    /* opacity: 0; */
+    width: 100%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, .4);
+    z-index: 3;
+}
+
+/* .image-info:hover {
+    opacity: 1;
+} */
 
 
 

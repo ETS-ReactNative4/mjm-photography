@@ -16,11 +16,14 @@ class App extends Component {
   }
   
   render() {
+    
     return (
       <div className="App">
+        
         <aside className="aside">
-      Mike Mitchell
+      IMAGES
         </aside>
+        <h1 className="name-heading">MIKE J MITCHELL</h1>
         <div className="main-grid container">
           {this.state.images.map((item, i) => <GridTile data={this.state.images} index={i} key={item.id}/>)}
         </div>

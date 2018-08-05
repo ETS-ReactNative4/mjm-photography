@@ -23,8 +23,8 @@ mongoose.connect(process.env.mongodburi).then(
 );
 
 //************************** CHANGE ROUTES BELOW ****************************/
-const FooRoutes = require ("./routes/FooRoutes")
-app.use(FooRoutes)
+const PictureRoutes = require ("./routes/PictureRoutes")
+app.use(PictureRoutes)
 
 //****************** only use this if hosting both app and server on heroku ******/
 
@@ -45,3 +45,9 @@ app.listen(port, (err) => {
 app.use(function (request,response) {
   response.send("NOPE!!!!");
 });
+
+
+
+
+
+      
