@@ -101,7 +101,7 @@ a:visited {
 }
 
 .nav-list {
-  padding-top: 80px;
+  padding-top: 71px;
 }
 
 .aside-icon-div {
@@ -122,7 +122,7 @@ a:visited {
 .container {
   padding: 10px 30px 20px 30px;
   column-count: 4;
-  column-gap: 1em;
+  column-gap: .8em;
   opacity: 1;
   transition: .2s
 }
@@ -133,7 +133,7 @@ a:visited {
 
 .item-main {
   width: 100%;
-  margin: 0 0 1em;
+  margin: 0 0 .8em;
 }
 
 .grid-image {
@@ -202,7 +202,7 @@ a:visited {
   flex-direction: column;
   align-items: center;
   opacity: 1;
-  transition: .2s;
+  transition: .1s;
 }
 
 .full-image-div.hidden {
@@ -215,6 +215,7 @@ a:visited {
     opacity: 0;
     padding: 0px 0px 40px 0px;
 }
+
 
 
 
@@ -269,7 +270,6 @@ a:visited {
 
   .container {
     column-count: 2;
-
   }
 
 }
@@ -293,6 +293,20 @@ a:visited {
   .title {
       font-size: 1.7em;
   }
+
+  .nav-list {
+    padding-top: 60px;
+  }
+
+  /* .full-image-div {
+    display: flex;
+    flex-direction: row;
+    justify-content:  center;  
+  } */
+
+  .full-image-item {
+    width: 80%;
+  }
     
 
 }
@@ -313,6 +327,14 @@ a:visited {
 }
 .title {
     font-size: 1.3em;
+}
+
+.full-image-item {
+  width: 80%;
+}
+
+.nav-list {
+  padding-top: 50px;
 }
   
 }

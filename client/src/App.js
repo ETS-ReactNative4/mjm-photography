@@ -20,7 +20,7 @@ class App extends Component {
 
   async componentDidMount () {
     try {
-      const response = await fetch("http://localhost:3001/pictures");
+      const response = await fetch("https://mjm-photo-server.herokuapp.com/pictures");
       const json = await response.json();
       this.setState({
         isLoaded: true,
@@ -52,6 +52,7 @@ class App extends Component {
                 <div className="aside-icon-div"><i className="far fa-camera-retro aside-icon"></i>
                 </div>
               </Link>
+
               <Link to="/info">
                 <div className="aside-icon-div">
                   <i className="fal fa-info-circle aside-icon"></i>
@@ -63,7 +64,12 @@ class App extends Component {
                 </div> 
               </a>
 
-              
+              <a href="mailto:<mimitch@mac.com>">
+                <div className="aside-icon-div"> <i className="fal fa-envelope aside-icon"></i>
+                </div> 
+              </a>
+
+             
             </nav>
           </aside>
           

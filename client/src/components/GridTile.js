@@ -8,7 +8,7 @@ class GridTile extends Component {
 
 
   handleClick = (e) => {
-    console.log(e.target.id);
+    // console.log(e.target.id);
   }
 
   load = (arg) => {
