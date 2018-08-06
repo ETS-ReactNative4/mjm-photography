@@ -13,7 +13,7 @@ mongoose.Promise = global.Promise;
 
 //************************** set mongodburi in .env file to DB link ****************************/
 
-mongoose.connect(process.env.mongodburi).then(
+mongoose.connect(process.env.mongodburi,{useNewUrlParser: true}).then(
   () => { 
     console.log("mongoose connected successfully");
   },

@@ -9,6 +9,11 @@ const Pic = (props) => {
 
   if (props.images) {
     currentPic = props.images.filter(pic => pic.id === Number(props.match.params.id))
+
+    setTimeout(() => {
+      document.getElementById("full-image-div").classList.remove("hidden")
+    }, 250);
+    
   }
 
   const handleClick = () => {
@@ -18,7 +23,7 @@ const Pic = (props) => {
   if (props.images){
     return (
     
-      <div className="full-image-div">
+      <div id="full-image-div" className="full-image-div hidden">
         <div className="full-image-item">
           <div className="image-info">
             <div className="arrow-div" onClick={handleClick}>
@@ -36,3 +41,4 @@ const Pic = (props) => {
 }
 
 export default Pic;
+

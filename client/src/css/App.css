@@ -14,7 +14,7 @@ body {
 
 a {
   color: black;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 a:visited {
@@ -60,24 +60,20 @@ a:visited {
           flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: flex-end;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-
-
-
 /*************** grid *************/
-
 
 .title {  
   grid-column-start: 1;
   grid-column: span 2;
   z-index: 10;
   font-weight: 200;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
   margin-top: 30px;
 
@@ -86,52 +82,96 @@ a:visited {
 .aside {
    height: 100vh;
    position: fixed;
-   /* background-color: pink; */
+   /* background-color: lightblue; */
    padding: 25px;
    grid-column-start: 1;
    grid-column: span 1;
 }
 
+.info-main {
+    margin-top: 35px;
+    width: 80vw;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.info-text {
+    padding: 0px 0px 0px 0px;
+
+}
+
 .nav-list {
-  padding-top: 14px;
+  padding-top: 80px;
+}
+
+.aside-icon-div {
+    padding: 8px;
+  
+}
+
+.aside-icon {
+    font-size: 1.3em;
 }
 
 .content {
-  /* margin-left: 100px; */
   grid-column-start: 2;
+  padding-right: 20px;
 }
+
 
 .container {
-  /* grid-column-start: 2; */
-  padding: 10px;
-  /* margin: 20px; */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-template-rows: 1fr auto-fill;
-  grid-gap: 20px;
-  grid-auto-flow: dense;
+  padding: 10px 30px 20px 30px;
+  column-count: 4;
+  column-gap: 1em;
+  opacity: 1;
+  transition: .2s
 }
 
-.item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /* font-size: 4em; */
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.container.hidden {
+    opacity: 0;
 }
 
-.loading-div {
+.item-main {
+  width: 100%;
+  margin: 0 0 1em;
+}
+
+.grid-image {
+  max-width: 100%;
+  /* height: auto; */
+  z-index: 2
+   /* min-width: 70%; */
+  
+  }
+
+#loading-div {
+  background-color: white;
+  width: 88vw;
+  height:2000px;
+  z-index: 1000;
   position: absolute;
-  animation: spin .6s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+#loading-div.hidden {
+    display: none;
+}
+
+.spinner-div {
+    width: 3em;
+    height: 3em;
+    animation: spin .6s linear infinite;
+    margin-top: calc(100vh / 2.4);
 }
 
 .grid-tile-spinner {
-  font-size: 3em;
+    font-size: 3em;
+    /* background-color: pink; */
+  /* height: max-content; */
+
 }
 
 @keyframes spin {
@@ -145,14 +185,6 @@ a:visited {
 
 
 
-
-.grid-image {
-  max-width: 100%;
-  z-index: 2
- /* min-width: 70%; */
-
-}
-
 .image-info {
   display: flex;
   align-items: center;
@@ -164,12 +196,27 @@ a:visited {
 
 .full-image-div {
   padding: 0px 0px 40px 0px;
-  /* width: 100%; */
+  max-width: 100%;
   /* background-color: pink; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 1;
+  transition: .2s;
 }
+
+.full-image-div.hidden {
+    padding: 0px 0px 40px 0px;
+  max-width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    opacity: 0;
+    padding: 0px 0px 40px 0px;
+}
+
+
 
 .arrow-div {
   cursor: pointer;
@@ -183,7 +230,9 @@ a:visited {
 }
 
 .single-image {
-  height: 70vh;
+  max-width: 100%;  
+  max-height: 75vh;
+
 }
 
 /* .image-info:hover {
@@ -192,3 +241,78 @@ a:visited {
 
 
 
+ /* *********************** media queries ********************* */
+
+ @media (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    column-count: 3;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .container {
+    column-count: 2;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .container {
+    column-count: 2;
+
+  }
+
+}
+  
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    column-count: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 50px 20px 50px;
+
+  }
+  .title {
+      font-size: 1.7em;
+  }
+    
+
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+  column-count: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 50px 20px 50px;
+  
+}
+.title {
+    font-size: 1.3em;
+}
+  
+}

@@ -8,17 +8,20 @@ class GridTile extends Component {
 
 
   handleClick = (e) => {
-    // console.log(e.target.id);
+    console.log(e.target.id);
   }
 
   load = (arg) => {
-    console.log("load", arg.props);
+    // console.log("load", arg.props);
   }
 
   render() {
 
     const pic = this.props.data
     const i = this.props.index
+
+    // console.log(pic[0].thumb);
+    
 
     return (
       <Link to={`/picture/${pic[i].id}`} key={pic.id}>
@@ -28,11 +31,6 @@ class GridTile extends Component {
         </div>
       </Link>
     )
-
-  //   <div className="loading-div">
-  //   <i className="fal fa-spinner-third grid-tile-spinner"></i>
-  //   {/* <i className="fal fa-spinner "></i> */}
-  // </div>
   }
 }
 
