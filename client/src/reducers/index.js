@@ -1,6 +1,6 @@
 import {combineReducers} from "redux";
 
-function images(state = [], action) {
+function pictures(state = [], action) {
   if (action.type === "FULLDATA_LOADED") {
     return action.value;
   }
@@ -17,7 +17,7 @@ function images(state = [], action) {
 
 
 const rootReducer = combineReducers({
-  images
+  pictures
 });
 
 export default rootReducer;
