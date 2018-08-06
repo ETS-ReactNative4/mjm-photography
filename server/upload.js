@@ -37,11 +37,29 @@ const pictures = [
     notes: ""
   },
   {
-    id: 3,
-    thumb:"/img/mjm_thumb_ - 3.jpg",
-    full:"/img/mjm_ - 3.jpg",
+    id: 4,
+    thumb:"/img/mjm_thumb_ - 4.jpg",
+    full:"/img/mjm_ - 4.jpg",
     year: "2011",
-    location: "Paia, HI",
+    location: "Gooding, ID",
+    format: "Medium Format Film",
+    notes: ""
+  },
+  {
+    id: 5,
+    thumb:"/img/mjm_thumb_ - 5.jpg",
+    full:"/img/mjm_ - 5.jpg",
+    year: "2011",
+    location: "Gooding, ID",
+    format: "Medium Format Film",
+    notes: ""
+  },
+  {
+    id: 6,
+    thumb:"/img/mjm_thumb_ - 6.jpg",
+    full:"/img/mjm_ - 6.jpg",
+    year: "2011",
+    location: "Gooding, ID",
     format: "Medium Format Film",
     notes: ""
   },
