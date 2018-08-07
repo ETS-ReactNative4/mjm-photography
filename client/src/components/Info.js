@@ -14,7 +14,8 @@ const Info = (props) => {
       <p className="info-text">Check out my web developer portfolio site <a href="http://mikejmitchell.com/" target="_blank" rel='noopener noreferrer'>here</a>.
       Thanks!</p>
       
-      
+      {/* <img src="img/camera.png" alt="" className="camera-image"/>  */}
+
       
       
     </div>

@@ -4,7 +4,10 @@ import '../css/App.css'
 
 const Header = (props) => {
   return (
-    <header className="name-heading"> <h1 className="title">MIKE J MITCHELL PHOTOGRAPHY</h1> </header>
+    <header className="name-heading basic-flex-row">
+      
+      <h1 className="title">MIKE J MITCHELL PHOTOGRAPHY</h1> 
+    </header>
   )
 }
 

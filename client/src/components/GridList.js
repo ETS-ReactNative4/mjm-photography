@@ -3,8 +3,6 @@ import '../css/App.css'
 import GridTile from './GridTile';
 
 
-
-
 class GridList extends Component {
   constructor(props) {
     super(props)
@@ -26,22 +24,17 @@ class GridList extends Component {
       this.setState({
         isLoaded: true
       })
-      // setTimeout(() => {
-      // document.getElementById("container").classList.remove("hidden")
-      // }, 300);
+      
     }
+    setTimeout(() => {
+      document.getElementById("container").classList.remove("hidden")
+    }, 300);
   }
 
-
-
-
   render() {
-
-
     if (this.state.isLoaded){
-      
       return (
-        <div id="container" className="main-grid container">
+        <div id="container" className="main-grid container hidden">
           {this.props.images.map((item, i) => <GridTile data={this.props.images} index={i} key={item.id}/>)}
         </div>
       )
