@@ -6,6 +6,10 @@
   grid-template-columns: 1fr 8fr; 
 }
 
+.pre-load-images {
+  transform: translateX(9999px);
+}
+
 body {
   overflow-y: scroll;
 }
@@ -207,6 +211,7 @@ a:visited {
 }
 
 .arrow-div {
+  z-index: 30;
   cursor: pointer;
   padding: 6px 12px 6px 6px;
   /* background-color: pink; */

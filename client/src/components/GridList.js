@@ -16,6 +16,9 @@ class GridList extends Component {
       this.setState({
         isLoaded: true
       })
+      setTimeout(() => {
+        document.getElementById("container").classList.remove("hidden")
+      }, 300);
     }
   }
 
@@ -24,11 +27,11 @@ class GridList extends Component {
       this.setState({
         isLoaded: true
       })
-      
+      setTimeout(() => {
+        document.getElementById("container").classList.remove("hidden")
+      }, 300);
     }
-    setTimeout(() => {
-      document.getElementById("container").classList.remove("hidden")
-    }, 300);
+  
   }
 
   render() {

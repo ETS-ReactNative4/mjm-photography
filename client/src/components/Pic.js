@@ -12,7 +12,7 @@ const Pic = (props) => {
 
     setTimeout(() => {
       document.getElementById("full-image-div").classList.remove("hidden")
-    }, 700);
+    }, 400);
     
   }
 
