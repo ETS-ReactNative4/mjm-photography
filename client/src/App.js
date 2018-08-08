@@ -15,7 +15,6 @@ class App extends Component {
     super(props)
     this.state = {
       fetchDone: false,
-      imgList: [],
       imgsLoaded: false,
       imgsJson: null
     }
@@ -29,6 +28,16 @@ class App extends Component {
         fetchDone: true,
         imgsJson: json,
       })
+      const that = this
+      if(!this.state.isLoaded){
+        window.addEventListener("load", function(){
+          console.log("loaded");
+          
+          that.setState({imgsLoaded: true})
+          document.getElementById("container").classList.remove("hidden")
+        })
+     
+      }
       // this.getimageList();
     } catch (error) {
       console.log(error);
@@ -37,23 +46,21 @@ class App extends Component {
       // console.log(location, action);
         
     })   
+
     
   }
 
-  async getimageList () {
-    const imageList = await document.getElementsByTagName('img')
-    // for(let i = 0; i < imageList.length; i++) {
-    //   console.log(imageList[i].outerHTML, imageList.length)
-    // }
-    if(imageList) {
-
-      
-      console.log("if statement");
-      
+  // getimageList = () => {
+  //   this.state.imgsJson.forEach((img) => {
+  //     const preImgThumb = document.createElement('img')
+  //     const preImg = document.createElement('img')
+  //     preImgThumb.src = img.thumb
+  //     preImg.src = img.full
+  //   })
+  //   this.setState({imgsLoaded: true})
+  //   console.log("done");
     
-    }
-  
-  }
+  // }
 
    
   render() {
@@ -75,7 +82,7 @@ class App extends Component {
             <Switch {...this.props}>
               <Route exact path="/picture/:id" render={(props) => <Pic {...props} images={this.state.imgsJson} />}/>
               <Route exact path="/info" component={Info} />
-              <Route path="/" render={(props) => <GridList {...props} images={this.state.imgsJson} />}/>
+              <Route path="/" render={(props) => <GridList {...props} images={this.state.imgsJson} loaded={this.state.imgsLoaded}/>}/>
             </Switch>
 
           </div>

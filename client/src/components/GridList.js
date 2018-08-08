@@ -1,67 +1,68 @@
 import React, { Component } from 'react'
 import '../css/App.css'
 import GridTile from './GridTile'
-// import Spinner from './Spinner'
+import Spinner from './Spinner'
 
 
 class GridList extends Component {
   constructor(props) {
+    
     super(props)
-    this.state = {
-      isLoaded: false
+    // this.state = {
+    //   isLoaded: false
+    // }
+  }
+
+  componentDidMount = () => {
+ 
+  }
+
+  getimageList = () => {
+    if(this.props.images){
+      this.props.images.forEach((img) => {
+        console.log("loop");
+        
+        const preImgThumb = document.createElement('img')
+        const preImg = document.createElement('img')
+        preImgThumb.src = img.thumb
+        preImg.src = img.full
+      })
+      console.log("done");
+      document.getElementById("container").classList.remove("hidden")
     }
   }
 
-  // componentDidMount = () => {
-  //   console.log("mount");
-  //   if(this.props.images){
-      
-  //     this.preLoad()
+  // componentDidUpdate = (prevProps) => {
+  //   if(this.props.images !== prevProps.images){
+  //     document.getElementById("container").classList.remove("hidden")
   //   }
   // }
 
-  componentDidUpdate = (prevProps) => {
-    if(this.props.images !== prevProps.images){
-      this.preLoad()
-    }
-  }
 
-    preLoad = () => {
-      this.props.images.forEach((img) => {
-        const preImg = document.createElement('img');
-        preImg.src = img.thumb; // Assigning the img src immediately requests the image
-        console.log("done");
-      
-      })
-      this.setState({
-        isLoaded: true
-      })
-      setTimeout(() => {
-        // document.getElementById("loading-div").classList.add("hidden")
-        document.getElementById("container").classList.remove("hidden")
-        
-      }, 1000);
-    }
+  // countImgs = (i) => {
+    
+  //   if(i === this.props.images.length - 1){
+  //     console.log(i, this.props.images.length);
+  //     // setTimeout(() => {
+  //     //   document.getElementById("container").classList.remove("hidden")
+  //     // }, 100);
+  //   } 
+  // }
   
 
-    render() {
-      if (this.state.isLoaded){
-        return (
-          <div id="container" className="main-grid container hidden">
-            {this.props.images.map((item, i) => <GridTile data={this.props.images} index={i} key={item.id}/>)}
-          </div>
-        )
-      } else {
-        return (
-          <div id="loading-div">
-            <div className="spinner-div">
-              <i className="fal fa-spinner-third grid-tile-spinner"></i>
-              {/* <i className="fal fa-spinner "></i> */}
-            </div>
-          </div>
-        )
-      }
+  render() {
+    if (this.props.images){
+      return (
+        <div id="container" className="main-grid container hidden">
+          {this.props.images.map((item, i) => <GridTile data={this.props.images} index={i} key={item.id} />)}
+        </div>
+      )
+    } else {
+      return (
+        null
+      )
     }
+  }
 }
 
 export default GridList;
