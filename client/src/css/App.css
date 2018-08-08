@@ -145,8 +145,8 @@ a:visited {
 #loading-div {
   background-color: white;
   width: 88vw;
-  height: 2000px;
-  z-index: 1000;
+  height: 100%;
+  /* z-index: 1000; */
   position: absolute;
   display: flex;
   justify-content: center;

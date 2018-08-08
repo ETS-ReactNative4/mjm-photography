@@ -29,27 +29,28 @@ class App extends Component {
         fetchDone: true,
         imgsJson: json,
       })
+      // this.getimageList();
     } catch (error) {
       console.log(error);
     }
     history.listen((location, action) => {
-      console.log(location, action);
+      // console.log(location, action);
         
     })   
-    this.getimageList();
+    
   }
 
   async getimageList () {
     const imageList = await document.getElementsByTagName('img')
-    for(let i = 0; i < imageList.length; i++) {
-      console.log(imageList[i].outerHTML, imageList.length)
-    }
+    // for(let i = 0; i < imageList.length; i++) {
+    //   console.log(imageList[i].outerHTML, imageList.length)
+    // }
     if(imageList) {
+
+      
       console.log("if statement");
       
-      setTimeout(() => {
-        document.getElementById("loading-div").classList.add("hidden")
-      }, 300)
+    
     }
   
   }
@@ -62,17 +63,14 @@ class App extends Component {
         <div className="App">
          
           <Aside />
+          
 
           <div className="content">
-
             <Header />
+            
 
-            <div id="loading-div">
-              <div className="spinner-div">
-                <i className="fal fa-spinner-third grid-tile-spinner"></i>
-                {/* <i className="fal fa-spinner "></i> */}
-              </div>
-            </div>
+          
+            
 
             <Switch {...this.props}>
               <Route exact path="/picture/:id" render={(props) => <Pic {...props} images={this.state.imgsJson} />}/>

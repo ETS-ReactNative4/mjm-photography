@@ -27,7 +27,8 @@ class GridTile extends Component {
       <Link to={`/picture/${pic[i].id}`} key={pic.id}>
         <div className="item-main">
           <div className={`item item-${pic[i].id}`} onClick={this.handleClick}>
-            <img src={pic[i].thumb} alt="Gallery" className="grid-image" id={`${pic[i].id.toString()}`}/> </div> 
+            <img src={pic[i].thumb} alt="Gallery" className="grid-image" id={`${pic[i].id.toString()}`}/> 
+          </div> 
         </div>
       </Link>
     )
