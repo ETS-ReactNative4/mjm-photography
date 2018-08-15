@@ -6,28 +6,28 @@ import {Link} from "react-router-dom";
 
 class GridTile extends Component {
 
-
-  // handleClick = (e) => {
-  //   // console.log(e.target.id);
-  // }
-
-  // load = (arg) => {
-  //   // console.log("load", arg.props);
-  // }
+  checkImgLoad = (i) => {
+    const imgList = document.getElementsByClassName("grid-image")
+    if(i === this.props.images.length - 1){
+      setTimeout(() => {
+        for (let i = 0; i < imgList.length; i++) {
+          imgList[i].classList.add("show")
+        }
+      }, 150);
+    } 
+  }
 
   render() {
 
-    const pic = this.props.data
+    const pic = this.props.images
     const i = this.props.index
 
-    // console.log(pic[0].thumb);
-    
-
     return (
-      <Link to={`/picture/${pic[i].id}`} key={pic.id}>
+      <Link to={`/picture/${pic[i].id}`} key={pic.id} images={this.props.images}>
         <div className="item-main">
           <div className={`item item-${pic[i].id}`} onClick={this.handleClick}>
-            <img src={pic[i].thumb} alt="Gallery" className="grid-image" id={`${pic[i].id.toString()}`}/> 
+            <img src={pic[i].thumb} alt="Gallery" 
+              className={'grid-image'} id={`${pic[i].id.toString()}`} onLoad={this.checkImgLoad(i)}/> 
           </div> 
         </div>
       </Link>
@@ -36,7 +36,7 @@ class GridTile extends Component {
 }
 
 GridTile.propTypes = {
-  data: PropTypes.array,
+  images: PropTypes.array,
   index: PropTypes.number
 }
 

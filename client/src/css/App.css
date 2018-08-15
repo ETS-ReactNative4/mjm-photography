@@ -69,6 +69,10 @@ a:visited {
 
 /*************** grid *************/
 
+#preLoad-image-div {
+  display: none;
+}
+
 .title {  
   z-index: 5;
   font-weight: 200;
@@ -129,10 +133,6 @@ a:visited {
   transition: .2s;
 }
 
-.container.hidden {
-  opacity: 0;
-}
-
 .item-main {
   width: 100%;
   margin: 0 0 .5em;
@@ -140,6 +140,13 @@ a:visited {
 
 .grid-image {
   max-width: 100%;
+  opacity: 0;
+}
+
+.grid-image.show {
+  transition-delay: .3s;
+  transition: .2s;
+  opacity: 1;
 }
 
 #loading-div {
@@ -195,19 +202,14 @@ a:visited {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 1;
-  transition: .1s;
+  opacity: 0;
+
 }
 
-.full-image-div.hidden {
-  padding: 0px 0px 40px 0px;
-  max-width: 100%;
-  /* background-color: pink; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  padding: 0px 0px 40px 0px;
+.full-image-div.show {
+  transition: .1s;
+  opacity: 1;
+
 }
 
 .arrow-div {

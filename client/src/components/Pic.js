@@ -1,19 +1,20 @@
 import React from 'react'
 import '../css/App.css'
 
-let currentPic;
+
+const checkImgLoad = () => {
+  setTimeout(() => {
+    document.getElementById("full-image-div").classList.add("show")
+  }, 100);
+}
 
 const Pic = (props) => {
-    
+
+  let currentPic;
   window.scrollTo(0, 0);
 
   if (props.images) {
     currentPic = props.images.filter(pic => pic.id === Number(props.match.params.id))
-
-    setTimeout(() => {
-      document.getElementById("full-image-div").classList.remove("hidden")
-    }, 400);
-    
   }
 
   const handleClick = () => {
@@ -23,7 +24,7 @@ const Pic = (props) => {
   if (props.images){
     return (
     
-      <div id="full-image-div" className="full-image-div hidden">
+      <div id="full-image-div" className="full-image-div">
         <div className="full-image-item">
           <div className="image-info">
             <div className="arrow-div" onClick={handleClick}>
@@ -31,7 +32,7 @@ const Pic = (props) => {
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;{`${currentPic[0].year}  -  `} {`${currentPic[0].location}  -  `}{currentPic[0].format}
           </div>
-          <img src={`/img/mjm_ - ${props.match.params.id}.jpg`} alt="full" className="single-image" />
+          <img src={`/img/mjm_ - ${props.match.params.id}.jpg`} alt="full" className="single-image" onLoad={checkImgLoad()}/>
         </div>
       </div>
     )
