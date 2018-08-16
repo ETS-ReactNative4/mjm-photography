@@ -1,101 +1,77 @@
 import React, { Component } from 'react';
-import './css/App.css';
+import state from './state'
+// import jss from 'jss'
+// import preset from 'jss-preset-default'
+import './css/App.css'
+import Spinner from './components/Spinner'
+import Aside from './components/Aside'
 import GridList from './components/GridList'
 import Header from './components/Header'
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import Pic from './components/Pic';
-import Info from './components/Info';
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Pic from './components/Pic'
+import Info from './components/Info'
 import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
-class App extends Component {
 
+class App extends Component {
   constructor (props){
     super(props)
-    
     this.state = {
-      isLoaded: false
+      imgsLoaded: false,
+      imgsJson: state.pictures,
+      counter: 0
     }
   }
 
-  async componentDidMount () {
-    try {
-      const response = await fetch("https://mjm-photo-server.herokuapp.com/pictures");
-      const json = await response.json();
-      this.setState({
-        isLoaded: true,
-        images: json
-      })
-    } catch (error) {
-      console.log(error);
-    }
+  componentDidMount () {
     history.listen((location, action) => {
-      // console.log(location, action);
-        
     })   
-    setTimeout(() => {
-      document.getElementById("loading-div").classList.add("hidden");
-    }, 1000);
+  }
+     
+  loadImgages = () => {
+    this.setState({ counter: this.state.counter + 1})
+    if (this.state.counter === this.state.imgsJson.length - 1) {
+      setTimeout(() => {
+        this.setState({imgsLoaded: true})
+      }, 1500);
+    }
   }
 
    
   render() {
-    
-    return (
-      <BrowserRouter>
-        <div className="App">
-         
-          <aside className="aside">
-            <nav className="nav-list basic-flex-col">
+    if (this.state.imgsLoaded) {
+      return (
+        <BrowserRouter>
+          <div className="App">
+            <Aside />
+            <div className="content">
+              <Header />
+              <Switch {...this.props}>
+                <Route exact path="/picture/:id" 
+                  render={(props) => <Pic {...props} images={this.state.imgsJson} />}/>
+                <Route exact path="/info" component={Info} />
+                <Route path="/" render={(props) => <GridList {...props} 
+                  images={this.state.imgsJson} 
+                  loaded={this.state.imgsLoaded}/>}/>
+              </Switch>
 
-              <Link to="/">
-                <div className="aside-icon-div"><i className="far fa-camera-retro aside-icon"></i>
-                </div>
-              </Link>
-
-              <Link to="/info">
-                <div className="aside-icon-div">
-                  <i className="fal fa-info-circle aside-icon"></i>
-                </div>
-              </Link>
-              
-              <a href="https://www.instagram.com/mimitch/" target="_blank" rel='noopener noreferrer'>
-                <div className="aside-icon-div"><i className="fab fa-instagram aside-icon"></i>
-                </div> 
-              </a>
-
-              <a href="mailto:<mimitch@mac.com>">
-                <div className="aside-icon-div"> <i className="fal fa-envelope aside-icon"></i>
-                </div> 
-              </a>
-
-             
-            </nav>
-          </aside>
-          
-          <div className="content">
-            <Header />
-            <div id="loading-div">
-              <div className="spinner-div">
-                <i className="fal fa-spinner-third grid-tile-spinner"></i>
-                {/* <i className="fal fa-spinner "></i> */}
-              </div>
             </div>
-            <Switch {...this.props}>
-              <Route exact path="/picture/:id" render={(props) => <Pic {...props} images={this.state.images} />}/>
-              {/* <Route path="/picture/:id" component={Pic} /> */}
-              <Route exact path="/info" component={Info} />
-              <Route path="/" render={(props) => <GridList {...props} images={this.state.images} />}/>
-              {/* <Route path="*" component={GridList} /> */}
-            </Switch>
           </div>
-       
+        </BrowserRouter>
+      )
+    } else {
+      return (
+        <div>
+          <div style={{display: "none"}} onLoad={this.loadImgages}>
+            {this.state.imgsJson.map(img => <img src={img.thumb} alt="" key={img.id} />)}
+            {this.state.imgsJson.map(img => <img src={img.full}  alt="" key={img.full} />)}
+          </div>
+          
+          <Spinner />
         </div>
-      </BrowserRouter>
-    );
-  
-
-  
+      )
+    }
   }
 }
 
