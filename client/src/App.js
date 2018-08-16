@@ -34,7 +34,7 @@ class App extends Component {
     if (this.state.counter === this.state.imgsJson.length - 1) {
       setTimeout(() => {
         this.setState({imgsLoaded: true})
-      }, 1000);
+      }, 1500);
     }
   }
 
