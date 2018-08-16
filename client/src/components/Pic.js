@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/App.css'
+import { Link } from "react-router-dom";
 
 
 const checkImgLoad = () => {
@@ -26,10 +27,16 @@ const Pic = (props) => {
       <div id="full-image-div" className="full-image-div">
         <div className="full-image-item">
           <div className="image-info" id="image-info">
-            <div className="arrow-div" onClick={handleClick}>
-              <i className="fal fa-chevron-left back-arrow" ></i>
-            </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;{`${currentPic[0].year}  -  `} {`${currentPic[0].location}  -  `}{currentPic[0].format}
+            <Link to="/">
+              <div className="arrow-div" onClick={handleClick}>
+                <i className="fal fa-chevron-left back-arrow" ></i>
+              </div>
+            </Link>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            {`${currentPic[0].year}  -  `} {`${currentPic[0].location}  -  `}{currentPic[0].format}
+
           </div>
           <img src={`/img/mjm_ - ${props.match.params.id}.jpg`} alt="full" className="single-image" onLoad={checkImgLoad()}/>
         </div>
