@@ -316,6 +316,15 @@ export default {
       location: "Austin, TX",
       format: "Digital",
       notes: ""
+    },
+    {
+      id: 39,
+      thumb:"/img/mjm_thumb_ - 39.jpg",
+      full:"/img/mjm_ - 39.jpg",
+      year: "2017",
+      location: "Austin, TX",
+      format: "Digital",
+      notes: ""
     }
     
   ]}

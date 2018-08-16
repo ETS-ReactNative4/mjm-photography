@@ -34,7 +34,7 @@ class App extends Component {
     if (this.state.counter === this.state.imgsJson.length - 1) {
       setTimeout(() => {
         this.setState({imgsLoaded: true})
-      }, 100);
+      }, 1000);
     }
   }
 
@@ -59,15 +59,15 @@ class App extends Component {
             </div>
           </div>
         </BrowserRouter>
-
-      );
+      )
     } else {
       return (
         <div>
           <div style={{display: "none"}} onLoad={this.loadImgages}>
-            {this.state.imgsJson.map(img => <img src={img.thumb} key={img.thumb} alt="" />)}
-            {this.state.imgsJson.map(img => <img src={img.full} key={img.id} alt="" />)}
+            {this.state.imgsJson.map(img => <img src={img.thumb} alt="" key={img.id} />)}
+            {this.state.imgsJson.map(img => <img src={img.full}  alt="" key={img.full} />)}
           </div>
+          
           <Spinner />
         </div>
       )

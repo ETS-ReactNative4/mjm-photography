@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const checkImgLoad = () => {
   setTimeout(() => {
     document.getElementById("image-info").classList.add("show")
-  }, 100);
+  }, 400);
 }
 
 const Pic = (props) => {
