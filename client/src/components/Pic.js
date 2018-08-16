@@ -4,7 +4,7 @@ import '../css/App.css'
 
 const checkImgLoad = () => {
   setTimeout(() => {
-    document.getElementById("full-image-div").classList.add("show")
+    document.getElementById("image-info").classList.add("show")
   }, 100);
 }
 
@@ -23,10 +23,9 @@ const Pic = (props) => {
 
   if (props.images){
     return (
-    
       <div id="full-image-div" className="full-image-div">
         <div className="full-image-item">
-          <div className="image-info">
+          <div className="image-info" id="image-info">
             <div className="arrow-div" onClick={handleClick}>
               <i className="fal fa-chevron-left back-arrow" ></i>
             </div>
