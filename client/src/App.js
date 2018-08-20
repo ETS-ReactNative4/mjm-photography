@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import state from './state'
-// import jss from 'jss'
-// import preset from 'jss-preset-default'
 import './css/App.css'
 import Spinner from './components/Spinner'
 import Aside from './components/Aside'
@@ -19,7 +17,7 @@ class App extends Component {
     super(props)
     this.state = {
       imgsLoaded: false,
-      imgsJson: state.pictures,
+      images: state.pictures,
       counter: 0
     }
   }
@@ -31,14 +29,13 @@ class App extends Component {
      
   loadImgages = () => {
     this.setState({ counter: this.state.counter + 1})
-    if (this.state.counter === this.state.imgsJson.length - 1) {
+    if (this.state.counter === this.state.images.length - 1) {
       setTimeout(() => {
         this.setState({imgsLoaded: true})
       }, 2300);
     }
   }
 
-   
   render() {
     if (this.state.imgsLoaded) {
       return (
@@ -49,13 +46,12 @@ class App extends Component {
               <Header />
               <Switch {...this.props}>
                 <Route exact path="/picture/:id" 
-                  render={(props) => <Pic {...props} images={this.state.imgsJson} />}/>
+                  render={(props) => <Pic {...props} images={this.state.images} />}/>
                 <Route exact path="/info" component={Info} />
                 <Route path="/" render={(props) => <GridList {...props} 
-                  images={this.state.imgsJson} 
+                  images={this.state.images} 
                   loaded={this.state.imgsLoaded}/>}/>
               </Switch>
-
             </div>
           </div>
         </BrowserRouter>
@@ -64,10 +60,9 @@ class App extends Component {
       return (
         <div>
           <div style={{display: "none"}} onLoad={this.loadImgages}>
-            {this.state.imgsJson.map(img => <img src={img.thumb} alt="" key={img.id} />)}
-            {this.state.imgsJson.map(img => <img src={img.full}  alt="" key={img.full} />)}
+            {this.state.images.map(img => <img src={img.thumb} alt="" key={img.id} />)}
+            {this.state.images.map(img => <img src={img.full}  alt="" key={img.full} />)}
           </div>
-          
           <Spinner />
         </div>
       )

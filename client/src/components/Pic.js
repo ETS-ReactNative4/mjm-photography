@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/App.css'
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
 const checkImgLoad = () => {
@@ -18,17 +19,13 @@ const Pic = (props) => {
     currentPic = props.images.filter(pic => pic.id === Number(props.match.params.id))
   }
 
-  const handleClick = () => {
-    props.history.goBack()
-  }
-
   if (props.images){
     return (
       <div id="full-image-div" className="full-image-div">
         <div className="full-image-item">
           <div className="image-info" id="image-info">
             <Link to="/">
-              <div className="arrow-div" onClick={handleClick}>
+              <div className="arrow-div">
                 <i className="fal fa-chevron-left back-arrow" ></i>
               </div>
             </Link>
@@ -46,6 +43,12 @@ const Pic = (props) => {
     return <div />
   }
 }
+
+Pic.propTypes = {
+  images: PropTypes.array,
+  match: PropTypes.object
+}
+
 
 export default Pic;
 

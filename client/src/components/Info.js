@@ -1,7 +1,6 @@
 import React from 'react'
 import '../css/App.css'
 
-
 const Info = (props) => {
   return (
     <div className="info-main">

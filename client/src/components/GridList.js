@@ -1,17 +1,9 @@
 import React, { Component } from 'react'
 import '../css/App.css'
 import GridTile from './GridTile'
-// import Spinner from './Spinner'
-
+import PropTypes from 'prop-types';
 
 class GridList extends Component {
-  constructor(props) {
-    
-    super(props)
-    this.state = {
-      isLoaded: false,
-    }
-  }
 
   render() {
     if (this.props.images){
@@ -26,6 +18,10 @@ class GridList extends Component {
       )
     }
   }
+}
+
+GridList.propTypes = {
+  images: PropTypes.array,
 }
 
 export default GridList;
