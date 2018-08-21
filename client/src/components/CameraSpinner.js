@@ -1,8 +1,6 @@
 import React from 'react'
 import '../css/App.css'
 
-
-
 const CameraSpinner = () => {
   return (
     <div className="spinner-div">

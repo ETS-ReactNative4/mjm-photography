@@ -7,18 +7,16 @@ import {Link} from "react-router-dom";
 class GridTile extends Component {
 
   render() {
-
-    const pic = this.props.images
-    const i = this.props.index
-
+    const { images, index } = this.props
+    
     return (
-      <Link to={`/picture/${pic[i].id}`} key={pic.id} 
-        images={this.props.images}>
-        <div className={`item item-${pic[i].id}`} 
+      <Link to={`/picture/${images[index].id}`} key={images.id} 
+        images={images}>
+        <div className={`item item-${images[index].id}`} 
           onClick={this.handleClick}>
-          <img src={pic[i].thumb} alt="Gallery" 
+          <img src={images[index].thumb} alt="Gallery" 
             className={'grid-image show'} 
-            id={`${pic[i].id.toString()}`} /> 
+            id={`${images[index].id.toString()}`} /> 
         </div> 
       </Link>
     )
