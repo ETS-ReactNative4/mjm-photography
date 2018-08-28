@@ -4,32 +4,33 @@ import GridTile from './GridTile'
 import PropTypes from 'prop-types';
 
 class GridList extends Component {
-
+state = {
+  loaded: false
+}
 
   componentDidMount = () => {    
     if (this.props.loaded) {
+      setTimeout(() => {
+        document.getElementById("main-grid").classList.add("show")
+      }, 30);
       // setTimeout(() => {
-      //   document.getElementById("main-grid").classList.add("show")
-      // }, 10);
+      //   document.getElementById("grid-spinner").classList.add("hide")
+      // }, 1600);
     }  
   }
 
-  // componentDidUpdate = (prevProps) => {
-  //   if (this.props.loaded !== prevProps.loaded) {
-  //     document.getElementById("main-grid").classList.add("show")
-  //   }
-  // }
-
   render() {
     const { images } = this.props
-    
     return (
-      <div id="main-grid" className="main-grid show">
+      <div id="main-grid" className="main-grid">
         {images && images.map((item, i) => 
           <GridTile images={images} 
             index={i} 
             key={item.id} />
         )}
+        {/* <div id="grid-spinner" className="grid-spinner">
+          <i className="far fa-spinner-third"></i>
+        </div> */}
       </div>
     )
   }
