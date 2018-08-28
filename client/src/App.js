@@ -19,22 +19,23 @@ class App extends Component {
     this.state = {
       imgsLoaded: false,
       images: state.pictures,
-      counter: 0
     }
   }
 
   componentDidMount () {
     history.listen((location, action) => {
     })   
+    setTimeout(() => {
+      this.setState({imgsLoaded: true})
+    }, 1800);
   }
      
   loadImgages = () => {
-    // this.setState({ counter: this.state.counter + 1})
     counter++
-    if (counter === this.state.images.length - 1) {
-      setTimeout(() => {
-        this.setState({imgsLoaded: true})
-      }, 2300);
+    // console.log(counter);
+    
+    if (counter === this.state.images.length * 2 - 2) {
+     
     }
   }
 
@@ -61,10 +62,14 @@ class App extends Component {
     } else {
       return (
         <div>
-          <div style={{display: "none"}} onLoad={this.loadImgages}>
-            {this.state.images.map(img => <img src={img.thumb} alt="" key={img.id} />)}
-            {this.state.images.map(img => <img src={img.full}  alt="" key={img.full} />)}
-          </div>
+          {/* <div style={{height: "0"}} >
+            {this.state.images.map(img => <img src={img.thumb} alt="" key={img.id} onLoad={this.loadImgages} 
+              style={{width: "0px", height: "0px"}}
+            />)}
+            {this.state.images.map(img => <img src={img.full}  alt="" key={img.full} onLoad={this.loadImgages} 
+              style={{width: "0px", height: "0px"}}
+            />)}
+          </div> */}
           <Spinner />
         </div>
       )

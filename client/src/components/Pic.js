@@ -6,8 +6,12 @@ import PropTypes from 'prop-types';
 
 const checkImgLoad = () => {
   setTimeout(() => {
-    document.getElementById("image-info").classList.add("show")
-  }, 400);
+    document.getElementById("full-image-div").classList.add("show")
+  }, 100);
+}
+
+const handleClick = () => {
+  document.getElementById("full-image-div").classList.remove("show")
 }
 
 const Pic = (props) => {
@@ -25,7 +29,7 @@ const Pic = (props) => {
         <div className="full-image-item">
           <div className="image-info" id="image-info">
             <Link to="/">
-              <div className="arrow-div">
+              <div className="arrow-div" onClick={handleClick}>
                 <i className="fal fa-chevron-left back-arrow" ></i>
               </div>
             </Link>
