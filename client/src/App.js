@@ -8,6 +8,7 @@ import Header from './components/Header'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Pic from './components/Pic'
 import Info from './components/Info'
+import Grid from './components/test'
 import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
@@ -38,6 +39,7 @@ class App extends Component {
             <div className="content">
               <Header />
               <Switch {...this.props}>
+                <Route exact path="/test" component={Grid} />
                 <Route exact path="/picture/:id" 
                   render={(props) => <Pic {...props} images={this.state.images} />}/>
                 <Route exact path="/info" component={Info} />

@@ -8,6 +8,19 @@
 
 }
 
+.pic-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-rows: 1px;
+  justify-content: center;
+}
+
+.grid-pic {
+  width: 100%;
+  grid-column: span 1;
+}
+
 body {
   overflow-y: scroll;
 }
@@ -19,9 +32,6 @@ a {
 a:visited {
   color: black;
 }
-
-
-
 
 .basic-flex-row {
   display: -webkit-box;
@@ -84,9 +94,6 @@ a:visited {
       -ms-flex-align: center;
           align-items: center;
 }
-
-
-
 
 @-webkit-keyframes blur {
   0% {
@@ -167,8 +174,8 @@ a:visited {
 }
 
 .spinner-background {
-  height: 120vh;
-  width: 120vw;
+  height: 100vh;
+  width: 100vw;
   position: absolute;
 }
 
@@ -225,12 +232,12 @@ a:visited {
   padding: 60px 30px 20px 10px;
   -webkit-column-count: 4;
           column-count: 4;
-  -webkit-column-gap: .6em;
-          column-gap: .6em;
+  -webkit-column-gap: .3em;
+          column-gap: .3em;
 }
 
 .item {
-  margin-bottom: .4em;
+  break-inside: avoid;
 }
 
 .main-grid.show {

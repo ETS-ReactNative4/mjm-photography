@@ -11,8 +11,18 @@ export default {
       format: "Medium Format Film",
       notes: ""
     },
+  
     {
       id: 2,
+      thumb:"/img/mjm_thumb_ - 14.jpg",
+      full:"/img/mjm_ - 14.jpg",
+      year: "2014",
+      location: "Puerto Vallarta, Mexico",
+      format: "Digital",
+      notes: ""
+    },
+    {
+      id: 3,
       thumb:"/img/mjm_thumb_ - 2.jpg",
       full:"/img/mjm_ - 2.jpg",
       year: "2010",
@@ -21,32 +31,25 @@ export default {
       notes: ""
     },
     {
-      id: 3,
-      thumb:"/img/mjm_thumb_ - 3.jpg",
-      full:"/img/mjm_ - 3.jpg",
-      year: "2009",
-      location: "Paia, HI",
-      format: "Medium Format Film",
-      notes: ""
-    },
-    {
       id: 4,
-      thumb:"/img/mjm_thumb_ - 4.jpg",
-      full:"/img/mjm_ - 4.jpg",
-      year: "2011",
-      location: "Gooding, ID",
-      format: "Medium Format Film",
+      thumb:"/img/mjm_thumb_ - 19.jpg",
+      full:"/img/mjm_ - 19.jpg",
+      year: "2015",
+      location: "Lyon, France",
+      format: "Digital",
       notes: ""
     },
     {
       id: 5,
-      thumb:"/img/mjm_thumb_ - 5.jpg",
-      full:"/img/mjm_ - 5.jpg",
-      year: "2011",
-      location: "Gooding, ID",
-      format: "Medium Format Film",
+      thumb:"/img/mjm_thumb_ - 20.jpg",
+      full:"/img/mjm_ - 20.jpg",
+      year: "2015",
+      location: "Lyon, France",
+      format: "Digital",
       notes: ""
     },
+ 
+  
     {
       id: 6,
       thumb:"/img/mjm_thumb_ - 6.jpg",
@@ -110,15 +113,7 @@ export default {
       format: "Digital",
       notes: ""
     },
-    {
-      id: 14,
-      thumb:"/img/mjm_thumb_ - 14.jpg",
-      full:"/img/mjm_ - 14.jpg",
-      year: "2014",
-      location: "Puerto Vallarta, Mexico",
-      format: "Digital",
-      notes: ""
-    },
+  
     {
       id: 15,
       thumb:"/img/mjm_thumb_ - 15.jpg",
@@ -126,6 +121,15 @@ export default {
       year: "2014",
       location: "Cupertino, CA",
       format: "Digital",
+      notes: ""
+    },
+    {
+      id: 16,
+      thumb:"/img/mjm_thumb_ - 3.jpg",
+      full:"/img/mjm_ - 3.jpg",
+      year: "2009",
+      location: "Paia, HI",
+      format: "Medium Format Film",
       notes: ""
     },
     {
@@ -146,22 +150,23 @@ export default {
       format: "Digital",
       notes: ""
     },
+   
     {
       id: 19,
-      thumb:"/img/mjm_thumb_ - 19.jpg",
-      full:"/img/mjm_ - 19.jpg",
-      year: "2015",
-      location: "Lyon, France",
-      format: "Digital",
+      thumb:"/img/mjm_thumb_ - 4.jpg",
+      full:"/img/mjm_ - 4.jpg",
+      year: "2011",
+      location: "Gooding, ID",
+      format: "Medium Format Film",
       notes: ""
     },
     {
       id: 20,
-      thumb:"/img/mjm_thumb_ - 20.jpg",
-      full:"/img/mjm_ - 20.jpg",
-      year: "2015",
-      location: "Lyon, France",
-      format: "Digital",
+      thumb:"/img/mjm_thumb_ - 5.jpg",
+      full:"/img/mjm_ - 5.jpg",
+      year: "2011",
+      location: "Gooding, ID",
+      format: "Medium Format Film",
       notes: ""
     },
     {
