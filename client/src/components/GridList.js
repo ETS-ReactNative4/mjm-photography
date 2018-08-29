@@ -13,9 +13,6 @@ state = {
       setTimeout(() => {
         document.getElementById("main-grid").classList.add("show")
       }, 30);
-      // setTimeout(() => {
-      //   document.getElementById("grid-spinner").classList.add("hide")
-      // }, 1600);
     }  
   }
 
@@ -28,9 +25,6 @@ state = {
             index={i} 
             key={item.id} />
         )}
-        {/* <div id="grid-spinner" className="grid-spinner">
-          <i className="far fa-spinner-third"></i>
-        </div> */}
       </div>
     )
   }

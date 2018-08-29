@@ -11,7 +11,6 @@ import Info from './components/Info'
 import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
-let counter = 0;
 
 class App extends Component {
   constructor (props){
@@ -28,15 +27,6 @@ class App extends Component {
     setTimeout(() => {
       this.setState({imgsLoaded: true})
     }, 1800);
-  }
-     
-  loadImgages = () => {
-    counter++
-    // console.log(counter);
-    
-    if (counter === this.state.images.length * 2 - 2) {
-     
-    }
   }
 
   render() {
@@ -62,14 +52,6 @@ class App extends Component {
     } else {
       return (
         <div>
-          {/* <div style={{height: "0"}} >
-            {this.state.images.map(img => <img src={img.thumb} alt="" key={img.id} onLoad={this.loadImgages} 
-              style={{width: "0px", height: "0px"}}
-            />)}
-            {this.state.images.map(img => <img src={img.full}  alt="" key={img.full} onLoad={this.loadImgages} 
-              style={{width: "0px", height: "0px"}}
-            />)}
-          </div> */}
           <Spinner />
         </div>
       )

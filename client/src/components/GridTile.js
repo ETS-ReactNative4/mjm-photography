@@ -6,21 +6,7 @@ import {Link} from "react-router-dom";
 let counter = 0;
 class GridTile extends Component {
  
-  constructor(props){
-    super(props)
-    this.state = {
-      show: false,
-    }
-  }
-
-
-
-  componentDidMount = () => {
-
-  }
-
   showImages = () => {
-
     const htmlCol = document.getElementsByClassName("grid-image")
     const arr = Array.from(htmlCol)
     counter++
@@ -29,9 +15,7 @@ class GridTile extends Component {
       setTimeout(() => {
         arr.forEach(img => img.classList.add("show"))
       }, 50);
-      
-    }
-      
+    }  
   }
 
   render() {

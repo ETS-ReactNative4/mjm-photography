@@ -1,6 +1,5 @@
 import React from 'react'
 import '../css/App.css'
-import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 
@@ -8,10 +7,6 @@ const checkImgLoad = () => {
   setTimeout(() => {
     document.getElementById("full-image-div").classList.add("show")
   }, 100);
-}
-
-const handleClick = () => {
-  document.getElementById("full-image-div").classList.remove("show")
 }
 
 const Pic = (props) => {
@@ -28,11 +23,9 @@ const Pic = (props) => {
       <div id="full-image-div" className="full-image-div">
         <div className="full-image-item">
           <div className="image-info" id="image-info">
-            <Link to="/">
-              <div className="arrow-div" onClick={handleClick}>
-                <i className="fal fa-chevron-left back-arrow" ></i>
-              </div>
-            </Link>
+            <div className="arrow-div" onClick={props.history.goBack}>
+              <i className="fal fa-chevron-left back-arrow" ></i>
+            </div>
 
             &nbsp;&nbsp;&nbsp;&nbsp;
 
