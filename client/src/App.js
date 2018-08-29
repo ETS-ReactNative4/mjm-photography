@@ -26,7 +26,7 @@ class App extends Component {
     })   
     setTimeout(() => {
       this.setState({imgsLoaded: true})
-    }, 1800);
+    }, 2000);
   }
 
   render() {
@@ -52,6 +52,14 @@ class App extends Component {
     } else {
       return (
         <div>
+          <div>
+            {this.state.images.map(img => <img src={img.thumb} alt="" key={img.id} onLoad={this.loadImgages} 
+              style={{width: "0px", height: "0px"}}
+            />)}
+            {this.state.images.map(img => <img src={img.full}  alt="" key={img.full} onLoad={this.loadImgages} 
+              style={{width: "0px", height: "0px"}}
+            />)}
+          </div>
           <Spinner />
         </div>
       )
