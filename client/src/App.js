@@ -18,7 +18,7 @@ class App extends Component {
     super(props)
     this.state = {
       imgsLoaded: false,
-      images: state.pictures,
+      images: state.pictures
     }
   }
 
@@ -43,8 +43,8 @@ class App extends Component {
                 <Route exact path="/picture/:id" 
                   render={(props) => <Pic {...props} images={this.state.images} />}/>
                 <Route exact path="/info" component={Info} />
+                {/* <Route path="/" component={GridList} /> */}
                 <Route path="/" render={(props) => <GridList {...props} 
-                  images={this.state.images} 
                   loaded={this.state.imgsLoaded}/>}/>
               </Switch>
             </div>
