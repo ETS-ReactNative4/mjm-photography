@@ -11,7 +11,6 @@ import Info from './components/Info'
 import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
-let counter = 0;
 
 class App extends Component {
   constructor (props){
@@ -30,30 +29,21 @@ class App extends Component {
     }, 1800);
   }
      
-  loadImgages = () => {
-    counter++
-    // console.log(counter);
-    
-    if (counter === this.state.images.length * 2 - 2) {
-     
-    }
-  }
-
   render() {
     if (this.state.imgsLoaded) {
       return (
         <BrowserRouter>
           <div className="App">
+            <Header />
             <Aside />
             <div className="content">
-              <Header />
+             
               <Switch {...this.props}>
                 <Route exact path="/picture/:id" 
                   render={(props) => <Pic {...props} images={this.state.images} />}/>
                 <Route exact path="/info" component={Info} />
-                <Route path="/" render={(props) => <GridList {...props} 
-                  images={this.state.images} 
-                  loaded={this.state.imgsLoaded}/>}/>
+                <Route path="/" render={(props) => <GridList {...props}
+                  images={this.state.images}/>}/>
               </Switch>
             </div>
           </div>
@@ -78,3 +68,4 @@ class App extends Component {
 }
 
 export default App;
+

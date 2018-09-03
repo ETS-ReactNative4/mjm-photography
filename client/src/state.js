@@ -12,6 +12,16 @@ export default {
       notes: ""
     },
     {
+      id: 38,
+      thumb:"/img/mjm_thumb_ - 38.jpg",
+      full:"/img/mjm_ - 38.jpg",
+      year: "2018",
+      location: "Austin, TX",
+      format: "Digital",
+      notes: ""
+    },
+
+    {
       id: 2,
       thumb:"/img/mjm_thumb_ - 2.jpg",
       full:"/img/mjm_ - 2.jpg",
@@ -20,6 +30,16 @@ export default {
       format: "Medium Format Film",
       notes: ""
     },
+    {
+      id: 24,
+      thumb:"/img/mjm_thumb_ - 24.jpg",
+      full:"/img/mjm_ - 24.jpg",
+      year: "2015",
+      location: "Paris, France",
+      format: "Digital",
+      notes: ""
+    },
+
     {
       id: 3,
       thumb:"/img/mjm_thumb_ - 3.jpg",
@@ -66,10 +86,19 @@ export default {
       notes: ""
     },
     {
+      id: 7,
+      thumb:"/img/mjm_thumb_ - 7.jpg",
+      full:"/img/mjm_ - 7.jpg",
+      year: "2018",
+      location: "Austin, TX",
+      format: "Digital",
+      notes: ""
+    },
+    {
       id: 9,
       thumb:"/img/mjm_thumb_ - 9.jpg",
       full:"/img/mjm_ - 9.jpg",
-      year: "2012",
+      year: "2006",
       location: "Santa Cruz, CA",
       format: "35mm Film",
       notes: ""
@@ -191,15 +220,7 @@ export default {
       format: "Digital",
       notes: ""
     },
-    {
-      id: 24,
-      thumb:"/img/mjm_thumb_ - 24.jpg",
-      full:"/img/mjm_ - 24.jpg",
-      year: "2015",
-      location: "Paris, France",
-      format: "Digital",
-      notes: ""
-    },
+ 
     {
       id: 25,
       thumb:"/img/mjm_thumb_ - 25.jpg",
@@ -254,15 +275,7 @@ export default {
       format: "Digital",
       notes: ""
     },
-    {
-      id: 31,
-      thumb:"/img/mjm_thumb_ - 31.jpg",
-      full:"/img/mjm_ - 31.jpg",
-      year: "2017",
-      location: "Austin, TX",
-      format: "Digital",
-      notes: ""
-    },
+
     {
       id: 32,
       thumb:"/img/mjm_thumb_ - 32.jpg",
@@ -318,14 +331,15 @@ export default {
       notes: ""
     },
     {
-      id: 38,
-      thumb:"/img/mjm_thumb_ - 38.jpg",
-      full:"/img/mjm_ - 38.jpg",
-      year: "2018",
+      id: 31,
+      thumb:"/img/mjm_thumb_ - 31.jpg",
+      full:"/img/mjm_ - 31.jpg",
+      year: "2017",
       location: "Austin, TX",
       format: "Digital",
       notes: ""
     },
+  
     {
       id: 39,
       thumb:"/img/mjm_thumb_ - 39.jpg",

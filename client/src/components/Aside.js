@@ -3,12 +3,15 @@ import '../css/App.css'
 import { Link } from "react-router-dom";
 
 const Aside = (props) => {
+
   return (
     <aside className="aside">
       <nav className="nav-list basic-flex-col">
 
         <Link to="/">
-          <div className="aside-icon-div"><i className="far fa-camera-retro aside-icon"></i>
+
+          <div className="aside-icon-div">
+            <i className="far fa-camera-retro aside-icon"></i>
           </div>
         </Link>
 
