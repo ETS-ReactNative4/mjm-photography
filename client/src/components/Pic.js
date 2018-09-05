@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import '../css/App.css'
-// import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import GridSpinner from './GridSpinner'
-
 
 class Pic extends Component {
 
@@ -17,56 +15,35 @@ class Pic extends Component {
 
   componentDidMount = () => {
     window.scrollTo(0, 0);    
-
   }
 
    checkImgLoad = () => {
-     console.log("timeout");
-
      setTimeout(() => {
-       
        this.setState({showMain: true})
        document.getElementById("full-image-div").classList.add("show")
-     }, 400);
+     }, 300);
    }
-
-
 
    handleClick = () => {
-
-
      this.props.history.goBack()
-    
-    
-     //  document.getElementById("full-image-div").classList.remove("show")
    }
 
- 
-
-  
    render() {
      if (this.props.images){
        return (
          <div>
            <GridSpinner timeout={400} />
            <div id="full-image-div" className="full-image-div">
-        
              <div className="full-image-item">
                <div className="image-info" id="image-info">
-                 {/* <Link to="/"> */}
                  <div className="arrow-div" onClick={this.handleClick}>
                    <i className="fal fa-chevron-left back-arrow" ></i>
                  </div>
-                 {/* </Link> */}
-
-            &nbsp;&nbsp;&nbsp;&nbsp;
-
+                  &nbsp;&nbsp;&nbsp;&nbsp;
                  {`${this.state.currentPic[0].year}  -  `} {`${this.state.currentPic[0].location}  -  `}{this.state.currentPic[0].format}
-
                </div>
                <img src={`/img/mjm_ - ${this.props.match.params.id}.jpg`} alt="full" className="single-image" onLoad={this.checkImgLoad}/>
              </div>
-        
            </div>
          </div>
        )
@@ -80,7 +57,6 @@ Pic.propTypes = {
   images: PropTypes.array,
   match: PropTypes.object
 }
-
 
 export default Pic;
 

@@ -9,7 +9,6 @@ const Aside = (props) => {
       <nav className="nav-list basic-flex-col">
 
         <Link to="/">
-
           <div className="aside-icon-div">
             <i className="far fa-camera-retro aside-icon"></i>
           </div>

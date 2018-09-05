@@ -15,9 +15,7 @@ class GridTile extends Component {
       setTimeout(() => {
         picArr.forEach(img => img.classList.add("show"))
       }, 560);
-      
     }
-      
   }
 
   render() {
