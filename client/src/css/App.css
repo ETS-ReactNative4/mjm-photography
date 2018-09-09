@@ -57,6 +57,8 @@ a:visited {
 #loading-div {
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,7 +73,6 @@ a:visited {
 #loading-div.hidden {
   display: none;
 }
-
 
 .spinner-div {
   position: absolute;
@@ -147,7 +148,6 @@ a:visited {
             transform: rotate(0deg);
   }
 }
-
 
 .camera-spinner {
   -webkit-animation-delay: .8s;
@@ -240,8 +240,8 @@ header {
   padding:  60px 30px 20px 10px;
   -webkit-column-count: 4;
           column-count: 4;
-  -webkit-column-gap: 6px;
-          column-gap: 6px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
 }
 
 /************************** GRIDTILE *******************************/
@@ -249,9 +249,7 @@ header {
  
 .grid-tile-div {
   position: relative;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+
 }
 
 .grid-spinner-div {
@@ -267,7 +265,7 @@ display: none;
 }
 
 .fa-sync {
- color: rgb(50, 50, 50);
+ color: rgb(150, 150, 150);
  animation: grid-spinner .7s linear infinite;
 }
 
@@ -281,20 +279,18 @@ display: none;
 }
 
 .grid-image {
-
   -webkit-column-break-inside: avoid;
           break-inside: avoid;
   opacity: 0;
   width: 100%;
-  -webkit-transition: .2s ease-in-out;
-          transition: .2s ease-in-out;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
 }
 
 .grid-image.show {
 
   -webkit-transition: .2s ease-in-out;
           transition: .2s ease-in-out;
+          transition-delay: .2s;
   opacity: 1;
 }
 
