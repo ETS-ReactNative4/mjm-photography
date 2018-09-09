@@ -234,36 +234,6 @@ header {
 
 /************************** GRID *******************************/
 
- .grid-spinner-div {
-   z-index: 500;
-   opacity: 1!important;
-   margin:0 auto;
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   margin-left:-35px;
-   margin-top:-35px
- }
-
- .grid-spinner-div.hide {
-   display: none;
- }
-
- .fa-sync {
-  font-size: 70px;
-  color: rgb(100, 100, 100);
-  animation: grid-spinner .7s linear infinite;
- }
- 
- @keyframes grid-spinner {
-   from {
-     transform: rotate(0deg)
-   }
-   to {
-     transform: rotate(360deg)
-   }
- }
-
  .main-grid {
   position: absolute;
   overflow-y: hidden;
@@ -274,7 +244,44 @@ header {
           column-gap: 6px;
 }
 
+/************************** GRIDTILE *******************************/
+
+ 
+.grid-tile-div {
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.grid-spinner-div {
+  position: absolute!important;
+  top: 50%;
+  left: 50%;
+  margin-left:-15px;
+  margin-top:-15px
+}
+
+.grid-spinner-div.hide {
+display: none;
+}
+
+.fa-sync {
+ color: rgb(50, 50, 50);
+ animation: grid-spinner .7s linear infinite;
+}
+
+@keyframes grid-spinner {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
 .grid-image {
+
   -webkit-column-break-inside: avoid;
           break-inside: avoid;
   opacity: 0;
@@ -285,6 +292,7 @@ header {
 }
 
 .grid-image.show {
+
   -webkit-transition: .2s ease-in-out;
           transition: .2s ease-in-out;
   opacity: 1;
@@ -338,6 +346,11 @@ header {
 .back-arrow {
   color: black;
   font-size: 1.2em;
+}
+
+.just-full-image-div {
+  opacity: 1!important;
+  position: relative;
 }
 
 .single-image {

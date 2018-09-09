@@ -12,11 +12,13 @@ class GridList extends Component {
     return (
       <div id="main-grid" className="main-grid show">
         {images && images.map((item, i) => 
+
           <GridTile images={images} 
             index={i} 
             key={item.id} />
+  
         )}
-        <GridSpinner timeout={560}/>
+      
       </div>
     )
   }

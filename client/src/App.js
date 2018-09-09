@@ -52,14 +52,14 @@ class App extends Component {
     } else {
       return (
         <div>
-          {/* <div style={{height: "0"}} >
+          <div>
             {this.state.images.map(img => <img src={img.thumb} alt="" key={img.id} onLoad={this.loadImgages} 
               style={{width: "0px", height: "0px"}}
             />)}
             {this.state.images.map(img => <img src={img.full}  alt="" key={img.full} onLoad={this.loadImgages} 
               style={{width: "0px", height: "0px"}}
             />)}
-          </div> */}
+          </div>
           <Spinner />
         </div>
       )
