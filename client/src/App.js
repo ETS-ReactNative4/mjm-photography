@@ -36,8 +36,7 @@ class App extends Component {
           <div className="App">
             <Header />
             <Aside />
-            <div className="content">
-             
+            <div className="content">        
               <Switch {...this.props}>
                 <Route exact path="/picture/:id" 
                   render={(props) => <Pic {...props} images={this.state.images} />}/>
