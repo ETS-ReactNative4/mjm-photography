@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import '../css/App.css'
-import GridTile from './GridTile'
+import GridTile from '../containers/GridTileContainer'
 import PropTypes from 'prop-types';
 
 class GridList extends Component {
+
+  
 
   render() {
     const { images } = this.props

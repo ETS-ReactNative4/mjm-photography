@@ -1,22 +1,22 @@
 
-// import App from "./App";
-// import { connect } from "react-redux";
-// import {/* loadMyMovieList */} from "./actions";
+import App from "./App";
+import { connect } from "react-redux";
+// import { loaded } from "./actions";
 
-// function mapStateToProps(state) {
-//   return {
-//    /*  searchResults: state.searchResults,
-//     myMovieList: state.myMovieList */
-//   };
-// }
+function mapStateToProps(state) {
+  return {
+    imgsLoaded: state.imgsLoaded,
+    pictures: state.pictures
+  };
+}
   
 // function mapDispatchToProps(dispatch) {
 //   return {
-//     /* loadMyMovieList */: () => {
-//       const action = /* loadMyMovieList() */;
-//     dispatch(action);
+//     loaded: (bool) => {
+//       const action = loaded(bool);
+//       dispatch(action);
 //     },
 //   };
 // }
 
-// export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps,null)(App);

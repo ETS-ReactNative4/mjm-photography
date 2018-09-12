@@ -48,7 +48,7 @@ class Pic extends Component {
      //  if (this.props.images){
      return (
        <div className="full-main-view">
-         <GridSpinner timeout={500} spinnerSize="50px" />
+         <GridSpinner spinnerSize="50px" />
          <div id="full-image-div" className="full-image-div">
            <div className="full-image-item">
              <div className="image-info" id="image-info">

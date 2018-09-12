@@ -1,6 +1,6 @@
 
 export default {
-  
+  imgsLoaded: false,
   pictures: [
     {
       id: 1,
