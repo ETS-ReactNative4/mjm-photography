@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import state from "../state";
 
 class ZoomedImage extends Component {
   render() {
+    const pictures = state.pictures
+   
     return (
-      <div className="zoomed-image-div">
-        <img src={this.props.image} alt="" className="zommed-image"/>
-        <i className="far fa-times-circle"></i>
+      <div style={{height: "100vh"}}>
+        {pictures.map(pic => 
+          <img src={pic.full}  style={{maxWidth: '200px', margin: '6px'}} alt=""/>
+          
+        )}
       </div>
     )
   }

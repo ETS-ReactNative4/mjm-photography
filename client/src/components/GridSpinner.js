@@ -12,7 +12,6 @@ class GridSpinner extends Component {
   }
 
   componentWillReceiveProps = () => {
-
     if(this.props.spinnerSize === "50px") {
       this.hideSpinners(30)
     }
@@ -22,7 +21,6 @@ class GridSpinner extends Component {
     const spinner = document.getElementsByClassName("grid-spinner-div")
     const spinners = Array.from(spinner)
     setTimeout(() => {
-      console.log("timeout")
       spinners.forEach(item => item.classList.add("hide"))
     }, time);
   }

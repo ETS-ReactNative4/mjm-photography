@@ -33,19 +33,13 @@ class Pic extends Component {
      this.props.history.goBack()
    }
 
-   handleImageClick = () => {
-     zoomView.classList.add("show")
-     mainView.classList.remove("show")
-
-   }
-
-   handleClose = () => {
-     zoomView.classList.remove("show")
-     mainView.classList.add("show")
+   handleImageClick = (e) => {
+     zoomView.classList.toggle("show")
+     mainView.classList.toggle("show")
    }
 
    render() {
-     //  if (this.props.images){
+     
      return (
        <div className="full-main-view">
          <GridSpinner spinnerSize="50px" />
@@ -58,24 +52,21 @@ class Pic extends Component {
                   &nbsp;&nbsp;&nbsp;&nbsp;
                {`${this.state.currentPic[0].year}  -  `} {`${this.state.currentPic[0].location}  -  `}{this.state.currentPic[0].format}
              </div>
-             <img src={`/img/mjm_ - ${this.props.match.params.id}.jpg`} alt="full" 
-               className="single-image" onLoad={this.checkImgLoad}
-               onClick={this.handleImageClick}/>
-          
+             <div className="just-image-div">
+               <img src={`/img/mjm_ - ${this.props.match.params.id}.jpg`} alt="full" 
+                 className="single-image" onLoad={this.checkImgLoad}
+                 onClick={this.handleImageClick}/>
+             </div>
            </div>
          </div>
          <div className="zoomed-image-div" id="zoomed-image-div">
            <div className="zoomed-image-wrapper">
              <img src={`/img/mjm_ - ${this.props.match.params.id}.jpg`} alt="" className="zommed-image" id="zommed-image"
-               onClick={this.handleClose}/>
-             {/* <i className="far fa-times-circle" id="close-button"></i> */}
+               onClick={this.handleImageClick}/>
            </div>
          </div>
        </div>
      )
-     //  } else {
-     //    return <GridSpinner timeout={400} spinnerSize="70px"/>
-     //  }
    }
 }
 
