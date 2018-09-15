@@ -10,7 +10,7 @@
 }
 
 :root {
-  --top-margin: 90px;
+  --top-margin: 72px;
 }
 
 body {
@@ -32,7 +32,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 30px 0 10px 0;
+  padding: 20px 0 0px 0;
 }
 
 .camera-image {
@@ -199,7 +199,7 @@ header {
 }
 
 .nav-list {
-  padding-top: 123px;
+  padding-top: 100px;
 }
 
 .aside-icon-div {
@@ -221,7 +221,7 @@ header {
 /************************** GRID *******************************/
 
  .main-grid {
-  /* position: absolute; */
+  position: absolute;
   overflow-y: hidden;
   padding:  60px 30px 20px 10px;
   -webkit-columns: 200px 4;
@@ -284,7 +284,6 @@ header {
 .grid-image {
   opacity: 0;
   width: 100%;
-  /* height: auto; */
   margin-bottom: 6px;
 }
 
@@ -313,7 +312,7 @@ header {
 
 .full-image-div {
   width: 100%;
-  margin-top: 35px;
+  margin-top: 52px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

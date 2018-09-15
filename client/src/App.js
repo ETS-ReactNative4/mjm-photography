@@ -22,6 +22,20 @@ class App extends Component {
   componentDidMount () {
     history.listen((location, action) => {
     })
+    window.addEventListener('resize', this.logSize)
+    window.addEventListener('scroll', this.scrollPosition)
+    this.logSize()
+    this.scrollPosition()
+  }
+
+  logSize = () => {
+    const size = {width: window.innerWidth, height: window.innerHeight}
+    this.props.setWinSize(size)
+  }
+
+  scrollPosition = () => {
+    const scrollPoint = window.scrollY
+    this.props.setScroll(scrollPoint)
   }
 
 

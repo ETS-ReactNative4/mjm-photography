@@ -1,5 +1,7 @@
 
 export default {
+  winSize: {},
+  scrollPos: 0,
   imgsLoaded: false,
   pictures: [
     {

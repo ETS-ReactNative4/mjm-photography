@@ -1,14 +1,4 @@
 
-// export function loadFullData() {
-//   return function (dispatch) {
-//     fetch("https://mjm-cocktail-app.herokuapp.com/getAllData").then( (response) => {
-//       return response.json();
-//     }).then(
-//       (result) => {
-//         dispatch(fullDataLoaded(result));
-//       });
-//   };
-// }
       
 export function loaded(bool) {
   return {
@@ -17,6 +7,19 @@ export function loaded(bool) {
   };
 }
 
+export function setWinSize(obj) {
+  return {
+    type: "SET_WINSIZE",
+    value: obj
+  };
+}
+
+export function setScroll(num) {
+  return {
+    type: "SET_SCROLL",
+    value: num
+  };
+}
 
 
 // export function loadFavorites() {

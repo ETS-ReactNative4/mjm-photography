@@ -1,22 +1,28 @@
 
 import App from "./App";
 import { connect } from "react-redux";
-// import { loaded } from "./actions";
+import { setWinSize, setScroll } from "./actions";
 
 function mapStateToProps(state) {
   return {
     imgsLoaded: state.imgsLoaded,
-    pictures: state.pictures
+    pictures: state.pictures,
+    scrollPos: state.scrollPos,
+    winSize: state.winSize
   };
 }
   
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     loaded: (bool) => {
-//       const action = loaded(bool);
-//       dispatch(action);
-//     },
-//   };
-// }
+function mapDispatchToProps(dispatch) {
+  return {
+    setWinSize: (obj) => {
+      const action = setWinSize(obj);
+      dispatch(action);
+    },
+    setScroll: (num) => {
+      const action = setScroll(num);
+      dispatch(action);
+    }
+  };
+}
 
-export default connect(mapStateToProps,null)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

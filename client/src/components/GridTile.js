@@ -5,17 +5,14 @@ import { Link } from "react-router-dom";
 import GridSpinner from './GridSpinner'
 // import Spinner from './Spinner'
 
-
-// let counter = 0;
 class GridTile extends Component {
 
-  constructor(props) {
-    super(props) 
-    this.state = {
+  // componentWillReceiveProps = () => {
+  //   setTimeout(() => {
+  //     console.log(this.props)
 
-    }
-  }
-
+  //   }, 300);
+  // }
 
   showImages = ( e ) => {
     const gridImg = document.getElementById(e.target.id)
