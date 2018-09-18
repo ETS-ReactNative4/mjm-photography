@@ -1,6 +1,6 @@
 
 {
-    "extends": "",
+   
     "rules": {
       "indent": ["error", 2]
     },
@@ -19,5 +19,6 @@
         "jsx": true
       }
     }
+
   }
   

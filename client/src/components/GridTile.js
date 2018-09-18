@@ -5,17 +5,28 @@ import { Link } from "react-router-dom";
 import GridSpinner from './GridSpinner'
 // import Spinner from './Spinner'
 
+// let tile;
+
+
 class GridTile extends Component {
 
-  // componentWillReceiveProps = () => {
-  //   setTimeout(() => {
-  //     console.log(this.props)
 
-  //   }, 300);
-  // }
+  componentDidMount = () => {
+    // window.addEventListener("scroll", () => tile.style.transform = `translate(${window.pageYOffset}px, ${window.pageYOffset}px)`, true)
+
+  }
+
+  componentWillReceiveProps = () => {
+    
+    setTimeout(() => {
+      console.log(this.props)
+
+    }, 200);
+  }
 
   showImages = ( e ) => {
     const gridImg = document.getElementById(e.target.id)
+    // tile = document.getElementById('grid-image-1')
     this.props.loaded(true)
     setTimeout(() => {
       gridImg.classList.add("show")

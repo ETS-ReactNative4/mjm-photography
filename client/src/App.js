@@ -36,8 +36,8 @@ class App extends Component {
   scrollPosition = () => {
     const scrollPoint = window.scrollY
     this.props.setScroll(scrollPoint)
-  }
 
+  }
 
   render() {
     return (

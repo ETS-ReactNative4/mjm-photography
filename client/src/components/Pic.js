@@ -22,18 +22,24 @@ class Pic extends Component {
     window.scrollTo(0, 0);    
   }
 
-   checkImgLoad = () => {
+   checkImgLoad = ( e ) => {
+     const img = e.target
+     const imgSize = {
+       x: img.width, 
+       y: img.height
+     }
+     console.log(imgSize)
      setTimeout(() => {
        this.setState({showMain: true})
        mainView.classList.add("show")
-     }, 300);
+     }, 100);
    }
 
    handleClick = () => {
      this.props.history.goBack()
    }
 
-   handleImageClick = (e) => {
+   handleImageClick = () => {
      zoomView.classList.toggle("show")
      mainView.classList.toggle("show")
    }
@@ -55,14 +61,14 @@ class Pic extends Component {
              <div className="just-image-div">
                <img src={`/img/mjm_ - ${this.props.match.params.id}.jpg`} alt="full" 
                  className="single-image" onLoad={this.checkImgLoad}
-                 onClick={this.handleImageClick}/>
+                 onClick={this.handleImageClick} />
              </div>
            </div>
          </div>
          <div className="zoomed-image-div" id="zoomed-image-div">
            <div className="zoomed-image-wrapper">
              <img src={`/img/mjm_ - ${this.props.match.params.id}.jpg`} alt="" className="zommed-image" id="zommed-image"
-               onClick={this.handleImageClick}/>
+               onClick={this.handleImageClick} />
            </div>
          </div>
        </div>

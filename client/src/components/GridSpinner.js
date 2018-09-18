@@ -7,18 +7,18 @@ class GridSpinner extends Component {
 
   componentDidMount = () => {
     if (this.props.loaded) {
-      this.hideSpinners(300)
+      this.hideSpinners(200)
     }
   }
 
   componentWillReceiveProps = () => {
     if(this.props.spinnerSize === "50px") {
-      this.hideSpinners(30)
+      this.hideSpinners(40)
     }
   }
 
   hideSpinners = (time) => {
-    const spinner = document.getElementsByClassName("grid-spinner-div")
+    const spinner = document.getElementsByClassName("fa-sync")
     const spinners = Array.from(spinner)
     setTimeout(() => {
       spinners.forEach(item => item.classList.add("hide"))

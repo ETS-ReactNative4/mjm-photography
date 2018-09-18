@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 
 class GridList extends Component {
 
-  
-
   render() {
     const { images } = this.props
     
@@ -15,7 +13,8 @@ class GridList extends Component {
         {images && images.map((item, i) => 
           <GridTile images={images} 
             index={i} 
-            key={item.id} />
+            key={item.id} 
+          />
         )}
       </div>
     )
