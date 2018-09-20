@@ -19,7 +19,7 @@ class GridTile extends Component {
   componentWillReceiveProps = () => {
     
     setTimeout(() => {
-      console.log(this.props)
+      // console.log(this.props)
 
     }, 200);
   }
@@ -27,6 +27,12 @@ class GridTile extends Component {
   showImages = ( e ) => {
     const gridImg = document.getElementById(e.target.id)
     // tile = document.getElementById('grid-image-1')
+    const img = e.target
+    const imgSize = {
+      x: img.width, 
+      y: img.height
+    }
+    console.log(imgSize)
     this.props.loaded(true)
     setTimeout(() => {
       gridImg.classList.add("show")

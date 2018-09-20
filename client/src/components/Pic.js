@@ -28,7 +28,6 @@ class Pic extends Component {
        x: img.width, 
        y: img.height
      }
-     console.log(imgSize)
      setTimeout(() => {
        this.setState({showMain: true})
        mainView.classList.add("show")

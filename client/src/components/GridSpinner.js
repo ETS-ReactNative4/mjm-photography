@@ -2,8 +2,20 @@ import React, { Component } from 'react'
 import '../css/App.css'
 import PropTypes from 'prop-types';
 
+// const styles = {
+//   fontSize: this.props.spinnerSize
+// }
+
 
 class GridSpinner extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      spinnerStyle: {
+        fontSize: this.props.spinnerSize,
+      }
+    }
+  }
 
   componentDidMount = () => {
     if (this.props.loaded) {
@@ -27,9 +39,10 @@ class GridSpinner extends Component {
        
 
   render() { 
+    // console.log(this.props)
     return (
       <div className="grid-spinner-div">
-        <i className="fal fa-sync" style={{fontSize: this.props.spinnerSize}}></i>
+        <i className="fal fa-sync" style={this.state.spinnerStyle}></i>
       </div>
     )
   }
