@@ -1,4 +1,4 @@
-import GridList from "../components/GridList";
+import GridSpinner from "../components/GridSpinner";
 import { connect } from "react-redux";
 import { loaded } from "../actions";
 
@@ -20,4 +20,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(GridList);
+export default connect(mapStateToProps,mapDispatchToProps)(GridSpinner);

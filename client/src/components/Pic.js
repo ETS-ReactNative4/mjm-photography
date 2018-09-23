@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../css/App.css'
 import PropTypes from 'prop-types';
-import GridSpinner from './GridSpinner'
+import { Link } from "react-router-dom";
+
+// import GridSpinner from '../containers/GridSpinnerContainer'
 
 
 let zoomView, mainView
@@ -23,14 +25,13 @@ class Pic extends Component {
   }
 
    checkImgLoad = () => {
-     //  const img = e.target
-     //  const imgSize = {
-     //    x: img.width, 
-     //    y: img.height
-     //  }
+     const spinner = document.getElementById("grid-spinner-div")
+
      setTimeout(() => {
+       this.props.loaded(true);
        this.setState({showMain: true})
        mainView.classList.add("show")
+       spinner.classList.add("hide")
      }, 100);
    }
 
@@ -47,13 +48,15 @@ class Pic extends Component {
      
      return (
        <div className="full-main-view">
-         <GridSpinner spinnerSize="50px" />
+         {/* <GridSpinner show={this.state.showMain} /> */}
          <div id="full-image-div" className="full-image-div">
            <div className="full-image-item">
              <div className="image-info" id="image-info">
+               {/* <Link to="/"> */}
                <div className="arrow-div" onClick={this.handleClick}>
                  <i className="fal fa-chevron-left back-arrow"></i>
                </div>
+               {/* </Link> */}
                   &nbsp;&nbsp;&nbsp;&nbsp;
                {`${this.state.currentPic[0].year}  -  `} {`${this.state.currentPic[0].location}  -  `}{this.state.currentPic[0].format}
              </div>

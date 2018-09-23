@@ -10,6 +10,7 @@ class GridList extends Component {
 
   componentDidMount = () => {
     window.onload = this.resizeAllGridItems();
+    window.addEventListener('resize', this.resizeAllGridItems)
   }
 
   showImages = ( e ) => {
@@ -17,26 +18,13 @@ class GridList extends Component {
     const imgHeight = Math.ceil(Math.round(img.getBoundingClientRect().height) /10 ) * 10
     img.style.height = `${imgHeight}px`
     counter++ 
-
     if (counter >= this.props.pictures.length) {
-
       const allItems = document.getElementsByClassName("grid-item");
-      const allImages = document.getElementsByClassName("grid-image");
-
       for(let i = 0; i < allItems.length; i++){
         this.resizeInstance( allItems[i] ) ;
       }
       this.props.loaded(true)
-
-      // setTimeout(() => {
-      //   for (let i = 0; i < allImages.length; i++) {
-      //     allImages[i].classList.add("show")
-      //   }    
-      // }, 10);
     }
-  
-    
-  
   }
 
    resizeInstance = (instance) => {
@@ -45,10 +33,8 @@ class GridList extends Component {
 
   resizeGridItem = (item) => {
     const imgHeight = item.querySelector('.grid-image').getBoundingClientRect().height
-
     const grid = document.getElementById("main-grid");
     grid.style.alignItems = "self-start";
-
     const rowSpan = imgHeight / 10;
     item.style.gridRowEnd = `span ${rowSpan}`;
   }
@@ -61,7 +47,6 @@ class GridList extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { pictures } = this.props
     
     return (

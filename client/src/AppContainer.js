@@ -7,8 +7,8 @@ function mapStateToProps(state) {
   return {
     imgsLoaded: state.imgsLoaded,
     pictures: state.pictures,
-    // scrollPos: state.scrollPos,
-    // winSize: state.winSize
+    scrollPos: state.scrollPos,
+    winSize: state.winSize
   };
 }
   

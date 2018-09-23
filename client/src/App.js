@@ -3,7 +3,7 @@ import './css/App.css'
 import Aside from './components/Aside'
 import GridList from './containers/GridListContainer'
 import Header from './components/Header'
-import GridSpinner from './components/GridSpinner'
+import GridSpinner from './containers/GridSpinnerContainer'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Pic from './containers/PicContainer'
 import Info from './components/Info'
@@ -45,7 +45,8 @@ class App extends Component {
         <div className="App">
           <Header />
           <Aside />
-          <div className="content">     
+          <div className="content">   
+            
             <GridSpinner spinnerSize="50px" />   
             <Switch>
               {/* <Route exact path="/picture/:id" 
@@ -57,6 +58,12 @@ class App extends Component {
                 images={this.state.images}/>}/> */}
             </Switch>
           </div>
+          {/* {this.props.imgsLoaded && this.state.images.map(pic => 
+            <img src={pic.full} alt="pre-load" 
+              className="pre-load"
+              style={{height: "0px", opacity: "0"}}
+              key={pic.full}/>
+          )}   */}
         </div>
       </BrowserRouter>
     )

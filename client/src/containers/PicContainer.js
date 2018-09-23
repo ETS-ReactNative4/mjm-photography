@@ -4,7 +4,7 @@ import { loaded } from "../actions";
 
 function mapStateToProps(state) {
   return {
-    // imgsLoaded: state.imgsLoaded,
+    imgsLoaded: state.imgsLoaded,
     winSize: state.winSize,
     scrollPos: state.scrollPos,
     pictures: state.pictures
