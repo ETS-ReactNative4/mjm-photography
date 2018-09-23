@@ -219,24 +219,24 @@ header {
 /************************** GRID *******************************/
 
  .main-grid {
-  position: absolute;
   overflow-y: hidden;
   padding:  60px 30px 20px 10px;
-  -webkit-columns: 200px 4;
-          columns: 200px 4;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-auto-rows: 10px;
+  justify-content: center;
 }
 
 /************************** GRIDTILE *******************************/
 
  
-.grid-tile-div {
-  -webkit-column-break-inside: avoid;
-  break-inside: avoid;
-  position: relative;
-  height: 100%;
-  display: inline-block;
+.grid-item {
+  border-top: 10px solid white;
+  border-bottom: 10px solid white;
+  border-right: 5px solid white;
+  border-left: 5px solid white;
+  box-sizing: border-box;
+  grid-column: span 1;
 }
 
 .grid-spinner-div {
@@ -281,18 +281,16 @@ header {
 }
 
 .grid-image {
-  opacity: 0;
   width: 100%;
-  margin-bottom: 6px;
 }
 
-.grid-image.show {
+/* .grid-image.show {
   -webkit-transition: .2s ease-in-out;
           transition: .2s ease-in-out;
           -webkit-transition-delay: .2s;
                   transition-delay: .2s;
   opacity: 1;
-}
+} */
 
 /* ******************* FULL IMAGE PAGE ********************** */
 

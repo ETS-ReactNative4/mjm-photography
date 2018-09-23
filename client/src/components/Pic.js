@@ -12,7 +12,7 @@ class Pic extends Component {
     super(props)
     this.state = {
       showMain: false,
-      currentPic: this.props.images.filter(pic => pic.id === Number(this.props.match.params.id))
+      currentPic: this.props.pictures.filter(pic => pic.id === Number(this.props.match.params.id))
     }
   }
 
@@ -22,12 +22,12 @@ class Pic extends Component {
     window.scrollTo(0, 0);    
   }
 
-   checkImgLoad = ( e ) => {
-     const img = e.target
-     const imgSize = {
-       x: img.width, 
-       y: img.height
-     }
+   checkImgLoad = () => {
+     //  const img = e.target
+     //  const imgSize = {
+     //    x: img.width, 
+     //    y: img.height
+     //  }
      setTimeout(() => {
        this.setState({showMain: true})
        mainView.classList.add("show")

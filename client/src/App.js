@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './css/App.css'
-// import ZoomedImage from './components/ZoomedImage'
 import Aside from './components/Aside'
-import GridList from './components/GridList'
+import GridList from './containers/GridListContainer'
 import Header from './components/Header'
+import GridSpinner from './components/GridSpinner'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import Pic from './components/Pic'
+import Pic from './containers/PicContainer'
 import Info from './components/Info'
 import createHistory from 'history/createBrowserHistory'
 
@@ -45,14 +45,16 @@ class App extends Component {
         <div className="App">
           <Header />
           <Aside />
-          <div className="content">        
-            <Switch {...this.props}>
-              <Route exact path="/picture/:id" 
-                render={(props) => <Pic {...props} images={this.state.images} />}/>
+          <div className="content">     
+            <GridSpinner spinnerSize="50px" />   
+            <Switch>
+              {/* <Route exact path="/picture/:id" 
+                render={(props) => <Pic {...props} images={this.state.images} />}/> */}
+              <Route exact path="/picture/:id" component={Pic} />
               <Route exact path="/info" component={Info} />
-              {/* <Route exact path="/test" component={ZoomedImage} /> */}
-              <Route path="/" render={(props) => <GridList {...props}
-                images={this.state.images}/>}/>
+              <Route exact path="/" component={GridList} />
+              {/* <Route path="/" render={(props) => <GridList {...props}
+                images={this.state.images}/>}/> */}
             </Switch>
           </div>
         </div>
