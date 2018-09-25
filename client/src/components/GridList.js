@@ -9,41 +9,40 @@ let counter = 0
 class GridList extends Component {
 
   componentDidMount = () => {
-    window.onload = this.resizeAllGridItems();
+    // window.onload = this.resizeAllGridItems();
     window.addEventListener('resize', this.resizeAllGridItems)
   }
 
   showImages = ( e ) => {
-    const img = e.target
-    const imgHeight = Math.ceil(Math.round(img.getBoundingClientRect().height) /10 ) * 10
-    img.style.height = `${imgHeight}px`
+    this.resizeImages(e.target)
     counter++ 
     if (counter >= this.props.pictures.length) {
-      const allItems = document.getElementsByClassName("grid-item");
-      for(let i = 0; i < allItems.length; i++){
-        this.resizeInstance( allItems[i] ) ;
-      }
-      this.props.loaded(true)
+      this.resizeAllGridItems();
+      this.props.loaded(true);
     }
   }
 
-   resizeInstance = (instance) => {
-     this.resizeGridItem(instance);
-   }
+  resizeImages = (img) => {
+    const imgHeight = Math.ceil(Math.round(img.getBoundingClientRect().height) /10 ) * 10
+    img.style.height = `${imgHeight}px`
+    // img.style.width = '100%'
+  }
+  
 
   resizeGridItem = (item) => {
+    this.resizeImages(item)
     const imgHeight = item.querySelector('.grid-image').getBoundingClientRect().height
-    const grid = document.getElementById("main-grid");
-    grid.style.alignItems = "self-start";
+    // const grid = document.getElementById("main-grid");
+    // grid.style.alignItems = "self-start";
     const rowSpan = imgHeight / 10;
     item.style.gridRowEnd = `span ${rowSpan}`;
+    // this.resizeImages(item)
+    // item.width = "100%"
   }
 
   resizeAllGridItems = () => {
-    const allItems = document.getElementsByClassName("grid-item");
-    for(let i =0 ; i < allItems.length; i++){
-      this.resizeGridItem(allItems[i]);
-    }
+    const allItems = [...document.getElementsByClassName("grid-item")];
+    allItems.forEach(itm => this.resizeGridItem(itm))
   }
 
   render() {
