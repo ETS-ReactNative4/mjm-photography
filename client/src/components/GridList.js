@@ -13,8 +13,7 @@ class GridList extends Component {
     window.addEventListener('resize', this.resizeAllGridItems)
   }
 
-  showImages = ( e ) => {
-    this.resizeImages(e.target)
+  showImages = () => {
     counter++ 
     if (counter >= this.props.pictures.length) {
       this.resizeAllGridItems();
@@ -22,19 +21,13 @@ class GridList extends Component {
     }
   }
 
-  resizeImages = (img) => {
-    const imgHeight = Math.ceil(Math.round(img.getBoundingClientRect().height) /10 ) * 10
-    img.style.height = `${imgHeight}px`
-    // img.style.width = '100%'
-  }
-  
-
   resizeGridItem = (item) => {
-    this.resizeImages(item)
+    // this.resizeImages(item)
     const imgHeight = item.querySelector('.grid-image').getBoundingClientRect().height
+    const findSpan = Math.ceil(Math.round(imgHeight /10 ) * 10)
     // const grid = document.getElementById("main-grid");
     // grid.style.alignItems = "self-start";
-    const rowSpan = imgHeight / 10;
+    const rowSpan = findSpan / 10;
     item.style.gridRowEnd = `span ${rowSpan}`;
     // this.resizeImages(item)
     // item.width = "100%"
