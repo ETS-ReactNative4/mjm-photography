@@ -544,7 +544,6 @@ header {
   }
 
   .grid-item {
-    /* display: block; */
     width: 100%;  
     border-top: 6px solid white;
     border-bottom: 6px solid white;
